@@ -86,7 +86,12 @@ class _TaskCartState extends State<TaskCart> {
                                 progressCount ==
                                         (widget.difficultyLevel * levelMax +
                                             1) //reinicia a barra
-                                    ? (progressCount = 1, corSelected++)
+                                    ? (
+                                        progressCount = 1,
+                                        (corSelected) >= 6
+                                            ? corSelected = 6
+                                            : corSelected++,
+                                      )
                                     : progressCount;
                               });
                             },
